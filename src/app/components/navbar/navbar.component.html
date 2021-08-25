@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--color-primary);">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/" style="color: var(--color-yellow);"><i class="fas fa-virus"></i> Covid19 Tracker</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" aria-current="page" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="countries">Countries</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
