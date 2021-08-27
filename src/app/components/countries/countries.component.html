@@ -1,14 +1,19 @@
 <div class="container-fluid">
     <div class="jumbotron text-center">
-        <h1 class="display-4">Corona Virus Tracker Application by Countries</h1>
-        <hr>
-        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam qui cupiditate corporis ut
-            doloribus explicabo quod totam repellendus, aut recusandae repudiandae. Hic, sit consectetur. Aperiam, eaque
-            quod. Cupiditate, rem ullam?.</p>
+        <h1 class="display-4 p-3">Corona Virus Tracker Application by Countries</h1>
         <hr class="my-4">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem autem ullam sunt officiis porro hic
-            ipsam
-            nihil minus ab dolorem, unde ad corporis quas! Eos a neque qui atque culpa?
-        </p>
+        <p class="lead">Select a country to see personalised data</p>
+
+        <mat-form-field appearance="fill" class="country-selector">
+            <mat-label>Select Country</mat-label>
+            <mat-select #input (selectionChange)='updateValues(input.value)'>
+                <mat-option value="{{country}}" *ngFor='let country of countries'>{{country}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        
+        <app-dashboard-card [totalConfirmed]='totalConfirmed' [totalActive]='totalActive' [totalDeaths]='totalDeaths'
+            [totalRecovered]='totalRecovered'>
+        </app-dashboard-card>
+
     </div>
 </div>
