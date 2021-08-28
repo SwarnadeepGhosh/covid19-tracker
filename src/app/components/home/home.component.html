@@ -7,6 +7,19 @@
             [totalRecovered]='totalRecovered'>
         </app-dashboard-card>
 
+        <!--<google-chart [data]="pieChart"></google-chart>
+        <google-chart [data]="columnChart"></google-chart>-->
+
+
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <google-chart [data]="pieChart"></google-chart>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <google-chart [data]="columnChart"></google-chart>
+            </div>
+        </div>
+
 
     </div>
 </div>

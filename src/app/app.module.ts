@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
+import { Ng2GoogleChartsModule, GoogleChartsSettings } from 'ng2-google-charts';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DashboardCardComponent } from './components/dashboard-card/dashboard-ca
     AppRoutingModule,
     HttpClientModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    Ng2GoogleChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
