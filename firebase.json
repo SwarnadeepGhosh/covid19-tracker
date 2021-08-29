@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "covid19-tracker5",
+    "public": "dist/covid19-tracker",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

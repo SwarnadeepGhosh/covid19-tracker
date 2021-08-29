@@ -3,3 +3,8 @@ google-chart {
   overflow-y: hidden;
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+

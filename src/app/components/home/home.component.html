@@ -6,9 +6,47 @@
         <app-dashboard-card [totalConfirmed]='totalConfirmed' [totalActive]='totalActive' [totalDeaths]='totalDeaths'
             [totalRecovered]='totalRecovered'>
         </app-dashboard-card>
+        <hr>
 
-        <!--<google-chart [data]="pieChart"></google-chart>
-        <google-chart [data]="columnChart"></google-chart>-->
+        
+        <mat-radio-group aria-label="Select an option">
+            <h3>Select Case Type</h3>
+            <mat-radio-button value="c" #c (click)='updateChart(c)' >Confirmed</mat-radio-button>
+            <mat-radio-button value="a" #a (click)='updateChart(a)' >Active</mat-radio-button>
+            <mat-radio-button value="d" #d (click)='updateChart(d)' >Deaths</mat-radio-button>
+            <mat-radio-button value="r" #r (click)='updateChart(r)' >Recovered</mat-radio-button>
+        </mat-radio-group>
+        
+
+        <!--<div class="ui form">
+            <div class="inline fields">
+              <label>Select the case Type</label>
+              <div class="field">
+                <div class="ui radio checkbox">
+                  <input type="radio" name="caseType" checked="checked" value="c" #c (click)='updateChart(c)'>
+                  <label>Confirmed</label>
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui radio checkbox">
+                  <input type="radio" name="caseType" value="a" #a (click)='updateChart(a)'>
+                  <label>Active</label>
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui radio checkbox">
+                  <input type="radio" name="caseType" value="d" #d (click)='updateChart(d)'>
+                  <label>Deaths</label>
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui radio checkbox">
+                  <input type="radio" name="caseType" value="r" #r (click)='updateChart(r)'>
+                  <label>Recovered</label>
+                </div>
+              </div>
+            </div>
+          </div>-->
 
 
         <div class="row">

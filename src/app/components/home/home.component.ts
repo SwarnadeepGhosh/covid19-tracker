@@ -38,18 +38,50 @@ export class HomeComponent implements OnInit {
           }
         });
 
-        this.initChart();
+        this.initChart('c');
       },
     });
   }
 
-  initChart() {
+  initChart(caseType: string) {
     let datatable = [];
     datatable.push(['Country', 'Cases']);
 
     this.globalData.forEach((cs) => {
-      if (cs.confirmed > 3000000) datatable.push([cs.country, cs.confirmed]);
+      let value: number = 0;
+      if (caseType == 'c') {
+        if (cs.confirmed > 3000000) {
+          value = +cs.confirmed;
+          //datatable.push([cs.country, cs.confirmed]);
+        }
+      }
+
+      if (caseType == 'a') {
+        if (cs.active > 2000) {
+          value = +cs.active;
+          //datatable.push([cs.country, cs.active]);
+        }
+      }
+
+      if (caseType == 'd') {
+        if (cs.deaths > 1000) {
+          value = +cs.deaths;
+          //datatable.push([cs.country, cs.deaths]);
+        }
+      }
+
+      if (caseType == 'r') {
+        if (cs.recovered > 3000) {
+          value = +cs.recovered;
+          //datatable.push([cs.country, cs.recovered]);
+        }
+      }
+
+      datatable.push([cs.country, value]);
+
     });
+
+    console.log(datatable)
 
     this.pieChart = {
       chartType: 'PieChart',
@@ -72,6 +104,10 @@ export class HomeComponent implements OnInit {
         is3D: true,
       },
     };
-    
+  }
+
+  updateChart(option: HTMLInputElement) {
+    console.log(option.value);
+    this.initChart(option.value);
   }
 }
